@@ -13,26 +13,469 @@ attività di stage e come le gestisce, parlando in particolare dello stage a
 cui la relazione finale fa riferimento.}\\
 
 %**************************************************************
-\section{Il progetto}
+\section{Il progetto}\label{sec:strat-prog}
 
-\subsection{Il progetto visto dall'azienda}
+Il progetto di stage era rivolto all'estensione dell'area Scrum di JPA.
 
+Tale area, nata grazie ad un'altra attività di stage, viene utilizzata
+quotidianamente dal team in cui sono stato inserito.
+
+Il mio compito durante l'attività di stage è stato aggiungere funzionalità
+che rendessero più soddisfacente l'uso dell'area Scrum di JPA. Questo è stato
+possibile riconoscendo alcuni limiti che ad inizio stage JPA presentava:
+
+\begin{itemize}
+\item Per poter essere utilizzato da team che adottano la metodologia Scrum,
+  vi era la necessità di studiare le differenze tra quanto previsto da Scrum e
+  quanto offerto attualmente da questa area di JPA;
+\item La decomposizione dei task più complessi era frequentemente fonte di
+  problemi, siccome rendeva poco comprensibile il visualizzatore di sprint per
+  le seguenti cause:
+  \begin{itemize}
+  \item Il meccanismo già presente per dire che un task è padre di un altro non
+    consentiva una visione chiara della relazione, che non veniva evidenziata
+    nel visualizzatore di sprint;
+  \item Sia esplicitando la relazione padre-figlio tra diversi task che
+    evitando di farlo, per suddividere un task in più sotto-task dovevano
+    essere create \textbf{molte} attività, che compromettevano la leggibilità
+    del visualizzatore di sprint.
+  \end{itemize}
+\item Nonostante uno dei principi fondamentali di Scrum sia l'\emph{Inspection}
+  dei propri processi, non vi era nessuno strumento a sostegno della verifica
+  e il controllo dei propri processi;
+\item Nel caso in cui questa area venisse offerta a clienti che non usano
+  Scrum ma che vorrebbero comunque usare alcune funzionalità di quest'area, vi
+  era la necessità di collegare Scrum alle aree di JPA comunemente usate dai
+  clienti;
+\item L'area Scrum di JPA prevedeva esclusivamente il \gls{pull-model} come
+  modalità per ottenere informazioni: questo problema incideva chiaramente
+  sull'efficienza del team.
+\end{itemize}
+
+In tabella \ref{tab:piano-di-lavoro} è riportato il Piano di Lavoro previsto
+inizialmente per le otto settimane di stage: \\
+
+\begin{tabular}{| c | p{10cm} |}
+
+\hline
+\textbf{Settimana} & \textbf{Lavoro previsto} \\
+\hline
+1 & Ricerca, studio e documentazione sulla metodologia scrum. Introduzione
+    ai linguaggi di sviluppo. Analisi dello stato attuale del prodotto e
+    confronto con la parte teorica. \\
+\hline
+2 & Analisi iniziale sulla gestione delle checklist legate ai task.
+    Sviluppo modulo anagrafico di gestione checklist. Documentazione modulo
+    anagrafico di gestione checklist. \\
+\hline
+3 & Sviluppo gestione checklist legate ai task. Documentazione relativa. \\
+\hline
+4 & Analisi su come produrre il burn-down chart con i dati presenti a
+    sistema. Analisi ed eventuale sviluppi sui dati mancanti e necessari
+    alla produzione del burn-down chart. Inizio sviluppo modulo di
+    configurazione chart. \\
+\hline
+5 & Eventuale completamento del modulo di configurazione chart. Sviluppo e
+    documentazione del burn-down chart. \\
+\hline
+6 & Completamento documentazione e tesi con obiettivi raggiunti e spunti
+    per possibili altri sviluppi futuri. Analisi, sviluppo e
+    documentazione gestione avvio istanza da task scrum. \\
+\hline
+7 & Analisi, sviluppo e documentazione sul collegamento tra modulo scrum e
+    modulo di notifica. \\
+\hline
+8 & Analisi, sviluppo e documentazione sul collegamento tra modulo scrum e
+    modulo forum. \\
+\hline
+\end{tabular}
+\captionof{table}{Piano di Lavoro}
+\label{tab:piano-di-lavoro}
+
+%**************************************************************
+\subsection{Il progetto visto dall'azienda}\label{sec:strat-ob-prod}
+
+Questo stage avrebbe portato all'azienda diversi vantaggi, distinti in
+obiettivi (produttivi) minimi e massimi. Sia che fossero minimi che massimi,
+entrambi i tipi di obiettivi prevedevano la stesura di documentazione per
+quanto sarebbe stato prodotto durante l'attività di stage.
+
+\paragraph{Obiettivi minimi} \mbox{} \\
+
+\begin{itemize}
+\item Confronto tra stato attuale di JPA e Scrum ``puro'';
+\item Sviluppo di un modulo di checklist;
+\item Sviluppo di una \gloss{direttiva} per visualizzare un burn-down chart
+  per uno sprint.
+\end{itemize}
+
+\paragraph{Obiettivi massimi} \mbox{} \\
+
+\begin{itemize}
+\item Avvio di un'istanza di processo da un task;
+\item Sviluppo di un sistema di notifiche che seguono il \gls{push-model};
+\item Collegamento tra area Scrum e Forum.
+\end{itemize}
+
+%**************************************************************
 \subsection{Il progetto visto dallo stagista}
 
+L'attività di stage è inserita nel piano di studi di un Corso di Laurea.
+
+Proprio per questo motivo, il Piano di Lavoro è stato pensato affinchè io
+riuscissi a guadagnare qualcosa dallo stage: sono stati infatti individuati
+degli obiettivi (formativi) minimi e massimi.
+
+\paragraph{Obiettivi minimi} \mbox{} \\
+
+\begin{itemize}
+\item Ottenimento di una conoscenza profonda di Scrum;
+\item Acquisizione delle competenze necessarie per sviluppare le funzionalità
+  previste negli obiettivi produttivi.
+\end{itemize}
+
+\paragraph{Obiettivi massimi} \mbox{} \\
+
+\begin{itemize}
+\item Capacità di adattare i principi di Scrum ad esigenze diverse dallo
+  sviluppo software.
+\end{itemize}
+
+\paragraph{La scelta} \mbox{} \\
+
+Prima dello stage la mia conoscenza sull'azienda era limitata e di Jgalileo
+sapevo solamente pochi dettagli.
+L'incontro avvenuto a
+Stage-IT\footnote{\url{http://informatica.math.unipd.it/laurea/stageit.html}}
+mi ha permesso di conoscere meglio la realtà aziendale e di richiedere un
+progetto che potesse includere lo studio di Scrum, siccome i metodi agili
+costituiscono un campo di studio molto coinvolgente per me.
+
+Qualche decennio fa i metodi con impostazione classica trovavano spazio
+e efficacia di applicazione, siccome il software era potenzialmente
+assimilabile ad un'attività di tipo industriale, dove requisiti e architettura
+vengono stabiliti inizialmente e mantenuti per mesi, fino ad una nuova analisi
+di mercato.
+
+Con l'avvento della globalizzazione non sempre è possibile applicare questi
+metodi, vista la mutevolezza del mondo esterno e dei suoi bisogni. Per questo
+motivo, ritengo che lo studio e l'applicazione di Scrum e altri metodi
+agili possa essere determinante per evitare il fallimento di progetti
+software.
+
+Oltre alla tematica principale dello stage, altri motivi che mi hanno portato
+a questa scelta sono:
+
+\begin{itemize}
+\item Conoscere parte del mondo dei software gestionali;
+\item Lavorare in un ambiente giovane, con molte persone al suo interno;
+\item Poter contribuire direttamente all'efficienza dei processi aziendali;
+\item Poter lavorare su una web application con tecnologie a me nuove.
+\end{itemize}
+
+%**************************************************************
 \section{Come l'azienda usa gli stage}
 
+Sanmarco Informatica, come detto nel primo capitolo, fornisce diverse
+opportunità di stage, a seconda della provenienza dei tirocinanti (scuole
+superiori, università o altro).
+
+È di particolare interesse comprendere come queste attività vengano adoperate
+dall'azienda per formare tali risorse o ottenere benefici dal lavoro di queste
+nel breve periodo e, nel secondo caso, il valore aggiunto che questi benefici
+portano.
+
+%**************************************************************
 \subsection{Visione dell'attività stage}
 
-\subsection{Integrazione nel team}
+\paragraph{Formazione} \mbox{} \\
 
+Mentre per gli stage di diversa natura (e.g. scuole superiori o iniziative
+indipendenti da istituzioni scolastiche) le risorse sono sottoposte a dei
+corsi di formazione che spesso partono dai fondamenti della programmazione ad
+oggetti, nel caso degli stage per studenti al termine degli studi di
+Informatica non è previsto nessun corso iniziale da parte di personale
+aziendale.
+
+Tuttavia, non avendo conoscenze approfondite su tecnologie e metodologie usate
+dal team in cui sono stato inserito, la prima settimana è stata dedicata allo
+studio e all'approfondimento (come indicato in tabella
+\ref{tab:piano-di-lavoro}) come preparazione per le successive settimane.
+
+\paragraph{Benefici derivanti dallo stage} \mbox{} \\
+
+La forza-lavoro di cui un'azienda dispone grazie alle attività di stage può
+essere utilizzata in diversi modi.
+
+Per quanto riguarda Sanmarco Informatica, vi sono principalmente tre visioni
+sull'attività di stage: una volta alla formazione, una alla prototipazione e
+una terza dedicata allo sviluppo.
+
+Come detto precedentemente, gli stage fortemente orientati alla formazione
+sono riservati a coloro che non dispongono di un ricco background informatico,
+in modo tale da permettere loro di acquisire le competenze necessarie per
+poter lavorare in una software house che sviluppa \gloss{erp}.
+
+Il secondo modo in cui l'azienda usa gli stage è per prototipazione: in questo
+caso lo stagista prova a percorrere strade potenzialmente utili al resto del
+team, sebbene non vi sia la garanzia che il prototipo prodotto venga
+effettivamente integrato in un secondo momento.
+
+Questa alternativa è dovuta al fatto che molte volte il team già inserito in
+azienda non ha tempo per sperimentare nuove soluzioni, nonostante queste
+potrebbero portare notevoli benefici.
+
+Infine, Sanmarco Informatica può utilizzare gli stage per lo sviluppo di nuove
+funzionalità in prodotti già esistenti, come nel mio caso.
+
+Durante la mia permanenza in azienda, ho potuto infatti vedere JPA evolversi
+grazie al mio contributo.
+
+Un altro vantaggio derivante da questo tipo di stage è il carico di
+responsabilità attribuitami: eventuali difetti introdotti nel prodotto
+avrebbero potuto danneggiare l'intero team in tempi molto brevi. Questo
+fattore mi ha permesso di percepire l'impatto che eventuali mie azioni
+sbagliate avrebbero potuto avere e allo stesso tempo mi ha permesso di tenere
+alta la concentrazione.
+
+%**************************************************************
+\subsection{Integrazione nel team}
+Durante l'attività di stage ho lavorato con il team che sviluppa JPA, a capo
+del quale vi è Alex Beggiato (il mio tutor aziendale).
+
+Questo team è composto da elementi giovani, alcuni di questi laureati da poco
+in Informatica o lauree affini a questa. Questo fattore e la disponibilità
+mostrata nei miei confronti ha reso molto semplice l'inserimento nel team.
+
+Le funzionalità di JPA che ho sviluppato attualmente hanno come
+\emph{stakeholders} il resto del team ed è stato determinante poter lavorare
+al loro fianco e avere un riscontro continuo per capire quanto ciò che stavo
+realizzando rispondesse correttamente alle loro necessità.
+
+%**************************************************************
 \subsection{Gestione degli obiettivi di stage}
 
+Come detto in sezione \ref{sec:strat-prog}, prima dello stage è stato fissato
+un Piano di Lavoro in quale erano fissati gli obiettivi produttivi.
+
+\paragraph{Granularità} \mbox{} \\
+
+Gli obiettivi individuati erano stati definiti in modo generico, posticipando
+la loro specifica precisa al momento in cui sarebbe cominciato il lavoro per
+raggiungerli.
+
+Al momento della stesura del Piano di Lavoro erano note le necessità e le
+principali lacune dell'area Scrum di JPA, ma c'era bisogno di tempo affinchè
+il team (me compreso) utilizzasse questa parte del prodotto e decidesse quale
+fosse la migliore evoluzione.
+
+Per questo motivo, i requisiti e la documentazione da produrre per ciascun
+incremento è sempre stata decisa all'inizio di ogni sprint.
+
+\paragraph{Flessibilità} \mbox{} \\
+
+Gli obiettivi di stage erano flessibili sia per quanto riguardava la loro
+granularità che per il fatto di poter evolvere nel caso in cui fossero stati
+completati anticipatamente.
+
+Questo ha permesso di realizzare ulteriori funzionalità una volta completate
+quelle inizialmente previste dal Piano di Lavoro.
+
+%**************************************************************
 \section{Vincoli}
 
+%**************************************************************
 \subsection{Vincoli tecnologici}
 
+Per lo sviluppo delle funzionalità elencate nel Piano di Lavoro ho dovuto
+utilizzare le tecnologie elencate in sezione \ref{sec:azienda-tecnologie}.
+
+Oltre a queste, nel corso dello stage sono stati imposti ulteriori vincoli
+tecnologici in base alle funzionalità che vi era la necessità di implementare.
+
+\paragraph{Google Chart} \mbox{} \\
+
+Per lo sviluppo degli strumenti di \emph{Inspection} ho dovuto utilizzare le
+Google Chart \gloss{api}\footnote{Oltre a questa libreria è stata analizzata
+la possibilità di usare Chart.js o D3.js. Tuttavia, non vi erano significativi
+vantaggi nell'utilizzare questi rispetto alle Google Chart \gloss{api}},
+poichè il resto del team aveva già cominciato a sviluppare dei prototipi e
+acquisito familiarità con queste.
+
+Questa libreria presenta i seguenti punti di forza:
+
+\begin{itemize}
+\item Numerosità elevata dei tipi di grafico, offrendo la possibilità di
+  combinarli;
+\item Utilizzo di HTML5 e supporto per diversi browser;
+\item Possibilità di aggiornare il grafico senza ricaricare la pagina;
+\item Grafici mostrati in formato \gloss{svg} (vettoriale), garantendo un'alta qualità
+  dell'immagine anche su schermi ad alta risoluzione o con zoom;
+\item Oltre a visualizzare l'immagine del grafico, sono disponibili degli
+  utili comandi per ciascun tipo di grafico;
+\item Il loro uso è gratuito.
+\end{itemize}
+
+Il loro uso però ha comportato le seguenti difficoltà:
+
+\begin{itemize}
+\item Complessità nell'integrarli in una web application scritta in AngularJS:
+  per l'integrazione è stata usata la \gloss{direttiva}
+  \texttt{angular-google-chart} v.0.0.11 che non copre completamente tutte le
+  possibilità offerte dalle Google Chart \gloss{api}. Ad esempio, non tutti i
+  tipi di grafico erano supportati e ho dovuto implementare alcune
+  funzionalità che sarebbero state disponibili nelle \gloss{api} ``originali'';
+
+\begin{figure}[H]%
+\centering
+\includegraphics[width=.5\columnwidth]{immagini/ang-goog-chart-logo}
+\caption{Logo della \gloss{direttiva} \texttt{angular-google-chart}}%
+\label{fig:logo-agc}%
+\end{figure}
+
+\item Struttura complessa per l'inserimento di dati: la ricca documentazione
+  delle Google Chart \gloss{api} non fornisce uno schema per le proprietà
+  degli oggetti rappresentati un grafico. \\
+  La difficoltà incontrata consiste infatti nel dover dedurre da vari esempi
+  sparsi nella documentazione il formato di dati corretto per un grafico,
+  siccome le funzioni di base disponibili per l'aggiunta di righe e colonne
+  non permettono di costruire grafici ricchi di dettagli.
+\end{itemize}
+
+\paragraph{Font Awesome Icons} \mbox{} \\
+
+Nelle pagine web di JPA è stato utilizzato il set di icone \textbf{Font
+Awesome Icons} v.4.1.0, che porta con sè diversi benefici:
+
+\begin{itemize}
+\item Si hanno a disposizione centinaia di icone con stile grafico uniforme;
+\item Le icone sono in formato \gloss{svg}, perciò la qualità della loro
+  visualizzazione rimane alta anche su schermi ad alta risoluzione o
+  effettuando uno zoom su queste;
+\item Non serve JavaScript per visualizzare le icone in questo set,
+  alleggerendo il caricamento della pagina e la facilità di impiego;
+\item È stato sviluppato originariamente per integrarsi con Bootstrap,
+  \gloss{framework} grafico utilizzato per il \FREND{} di JPA;
+\item Risulta facile modificare le icone presenti e fornire stili aggiuntivi
+  con regole CSS;
+\item Questo insieme di icone è ottimo anche dal punto di vista
+  dell'accessibilità fornendo supporto agli screen reader;
+\item Il suo uso è gratuito.
+\end{itemize}
+
+\begin{figure}[H]%
+\centering
+\includegraphics[width=.5\columnwidth]{immagini/logo-fa}
+\caption{Logo di Font Awesome Icons}%
+\label{fig:logo-fa}%
+\end{figure}
+
+%**************************************************************
 \subsection{Vincoli metodologici}
 
+\paragraph{Interazione con tutor aziendale} \mbox{}
+
+Durante lo stage vi sono state tre modalità di dialogo con il tutor aziendale:
+analisi, \emph{Daily Scrum} e chiarimenti.
+
+L'analisi veniva effettuata ad ogni pianificazione ed era volta a definire e
+disambiguare gli obiettivi del Piano di Lavoro. Tale attività aveva durata
+variabile a seconda dello sforzo necessario a portare a termine tale obiettivo.
+
+Il \emph{Daily Scrum} consisteva in un confronto quotidiano per fare il punto
+della situazione ed evidenziare eventuali difficoltà incontrate.
+
+Il resto delle interazioni con il tutor aziendale sono state perlopiù
+chiarimenti, siccome ho svolto lo stage nello stesso open space dove lavorava
+il team. Queste avvenivano principalmente per:
+
+\begin{itemize}
+\item Capire se la parte di incremento parzialmente sviluppata era corretta
+  rispetto alle attese;
+\item Chiedere informazioni riguardo norme o raccomandazioni per lo sviluppo;
+\item Ricevere informazioni su variazioni o chiarimenti di requisiti.
+\end{itemize}
+
+\paragraph{Pianificazione dello sprint} \mbox{}
+
+La pianificazione dello sprint (\emph{Sprint Planning}) avveniva
+settimanalmente e serviva per definire più precisamente gli obiettivi da portare a termine e determinare i vari task da svolgere necessari per
+completare un incremento.
+
+Una volta terminata l'analisi, era mio compito:
+
+\begin{enumerate}
+\item Creare uno sprint in JPA per la settimana lavorativa;
+\item Attivare tale sprint;
+\item Creare i task necessari per riuscire a sviluppare l'incremento;
+\item Inserire tali task nello sprint appena creato.
+\end{enumerate}
+
+\paragraph{Consegna dell'incremento di uno sprint} \mbox{}
+
+Al termine dello sprint, le parti dell'incremento venivano consegnate con 
+diverse modalità a seconda della loro natura:
+
+\begin{itemize}
+\item Le modifiche agli script per JPADb venivano integrate appena testate;
+\item I documenti venivano consegnati in allegato alla mail di resoconto
+  inviata al tutor interno;
+\item Le modifiche al \BKEND{} venivano integrate al ramo principale di SVN;
+\item Le modifiche al \FREND{} venivano consegnate personalmente al tutor
+  aziendale affinchè fossero verificate più attentamente, per essere integrate
+  in un secondo momento.
+\end{itemize}
+
+%**************************************************************
 \subsection{Vincoli temporali}
 
+Lo stage previsto al termine del corso di studi della laurea triennale in
+Informatica ha durata compresa tra le 300 e le 320 ore. In questo caso lo
+stage ha impiegato 320 ore, per un totale di 8 settimane lavorative.
+
+Per la maggior parte dei 40 giorni (circa il 70\% di questi) ho lavorato tra i
+30 e i 40 minuti in più al giorno, sia anticipando le entrate che posticipando
+le uscite.
+
+Questa scelta è completamente personale, dal momento che spesso per avviare il
+computer e la macchina virtuale su cui lavoravo erano necessari tra i 10 e i
+20 minuti. In questo modo, ho potuto impiegare pienamente un tempo leggermente
+maggiore delle 320 ore di stage per raggiungere gli obiettivi previsti e
+quelli aggiuntivi.
+
+%**************************************************************
 \section{Prospettive di fine stage}
+
+Una volta terminato lo stage, diventa interessante sapere cosa avviene in
+seguito.
+
+\paragraph{Assunzione} \mbox{} \\
+
+A seguito di un'attività formativa, l'azienda potrebbe decidere di confermare
+le risorse in cui ha investito. Nel caso di Sanmarco Informatica, questa
+ipotesi assume sfumature molto concrete:
+
+\begin{itemize}
+\item al termine dei corsi di formazione, mediamente un terzo o metà dei
+  partecipanti trova occupazione presso l'azienda;
+\item nel team in cui sono stato inserito, metà dei componenti erano stati
+assunti dopo uno stage universitario come il mio.
+\end{itemize}
+
+\paragraph{Uso del prodotto} \mbox{} \\
+
+Un altro aspetto, anticipato nei precedenti paragrafi, è come quanto prodotto
+durante lo stage verrà utilizzato una volta conclusa l'attività.
+
+Nel mio caso le funzionalità stanno venendo integrate completamente man mano
+che vengono testate dal tutor aziendale ed alcune erano già presenti in JPA al
+termine delle otto settimane.
+
+Oltre a ciò, la documentazione prodotta potrà essere utilizzata per:
+
+\begin{itemize}
+\item testare quanto realizzato;
+\item avere spunti su come evolvere JPA, per avvicinarlo maggiormente a Scrum
+  o per estendere funzionalità introdotte durante lo stage;
+\item per fornire istruzioni per l'utilizzo di JPA.
+\end{itemize}
