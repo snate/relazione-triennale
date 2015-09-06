@@ -47,7 +47,6 @@
 
 \DeclareBibliographyCategory{opere}
 \DeclareBibliographyCategory{web}
-\DeclareBibliographyCategory{figure}
 
 %\addtocategory{opere}{womak:lean-thinking}
 \addtocategory{opere}{rubin:essential-scrum}
@@ -65,20 +64,20 @@
 \addtocategory{web}{site:jgalileo-site}
 \addtocategory{web}{site:open-power-foundation}
 \addtocategory{web}{site:scrum-methodologies}
-\addtocategory{figure}{figure:scrum-overview}
-\addtocategory{figure}{figure:smi-logo}
-\addtocategory{figure}{figure:open-power}
+\addtocategory{web}{site:angular-google-chart}
+\addtocategory{web}{site:font-awesome-icons}
+\addtocategory{web}{site:google-chart-api}
+\addtocategory{web}{site:html5}
 
 \defbibheading{opere}{\section*{Riferimenti bibliografici}}
 \defbibheading{web}{\section*{Siti Web consultati}}
-\defbibheading{figure}{\section*{Figure}}
 
 
 %**************************************************************
 % Impostazioni di caption
 %**************************************************************
 \captionsetup{
-    tableposition=top,
+    %tableposition=bottom,
     figureposition=bottom,
     font=small,
     format=hang,
@@ -270,3 +269,5 @@
 
 \newcommand{\BKEND}{back-end}
 \newcommand{\FREND}{front-end}
+
+\newcommand{\source}[1]{\caption*{\centering{\raggedright{\textbf{Fonte}: {#1}}}}}
