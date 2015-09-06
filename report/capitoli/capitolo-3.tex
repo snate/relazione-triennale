@@ -4,7 +4,7 @@
 % !TEX spellcheck = it-IT
 
 %**************************************************************
-\chapter{Progetto}
+\chapter{Svolgimento dello stage}
 \label{cap:progetto}
 %**************************************************************
 
@@ -13,6 +13,128 @@ l'attività di stage.}\\
 
 %**************************************************************
 \section{Pianificazione}
+
+Man mano che venivano definite, le attività pianificate di settimana in
+settimana sono state inserite in JPA in sprint visibili solamente a me.
+
+In questi sprint i task venivano creati da me e assegnati a me stesso,
+utilizzando i tipi disponibili nel seguente modo:
+
+\begin{itemize}
+\item \textbf{Nuovo sviluppo:} documentazione
+\item \textbf{Implementazione:} realizzazione di funzionalità
+\item \textbf{Errore:} anomalie riportate dal tutor aziendale o dagli altri
+  membri del team
+\end{itemize}
+
+Sebbene dalla quarta settimana fossero disponibili anche le checklist per
+pianificare ed organizzare il proprio lavoro, non ho mai avuto necessità di
+utilizzarle siccome gli sprint da me utilizzati erano personali. A causa
+di ciò, anche decomponendo i task più complessi in un insieme di task, la
+visualizzazione dello sprint rimaneva sempre chiara.
+
+La pianificazione effettuata durante l'attività di stage ha raffinato gli
+obiettivi ed il Piano di Lavoro inizialmente individuati.
+
+Dal momento che durante lo stage alcune parti del lavoro previsto sono state
+completate anticipatamente, sono stati aggiunti nuovi obiettivi produttivi ad
+attività in corso.
+
+Le deviazioni rispetto al Piano di Lavoro (tabella \ref{tab:piano-di-lavoro})
+delle otto settimane lavorative di stage sono riportate in tabella
+\ref{tab:deviazioni}.
+
+Si può in particolare notare che la maggior parte del lavoro svolto nelle
+settimane 5, 7 e 8 non era prevista inizialmente. Questi incrementi sono stati
+concordati con il tutor aziendale durante la mia permanenza a Sanmarco
+Informatica, analizzando ulteriori necessità del team.
+
+\begin{tabular}[t]{| c | p{10cm} |}
+
+\hline
+\textbf{Settimana} & \textbf{Lavoro previsto} \\
+\hline
+1 &
+Sviluppo di un layout alternativo per un modulo (non previsto). \\
+\hline
+2 &
+Mancato sviluppo di creazione checklist da template (obbligatorio) e
+  importazione template in checklist (opzionale). \\
+\hline
+3 &
+Sviluppo creazione checklist da template (in ritardo dalla settimana 2). \\
+\hline
+4 &
+Completamento modulo burn-down chart, documentazione esclusa. \\
+\hline
+5 &
+Importazione di template in checklist (opzionale, in ritardo dalla settimana
+  2). Completamento documentazione burn-down chart. Sviluppo avvio istanza da
+  task Scrum (in anticipo, previsto per settimana 6). Sviluppo di ulteriori
+  strumenti di Inspection: burn-up chart, pie chart, cumulative flow diagram e
+  una variante del burn-down chart (inizialmente non previsti). \\
+\hline
+6 &
+Analisi, sviluppo e documentazione sul collegamento tra modulo scrum e modulo
+  di notifica (anticipato dalla settimana 7). \\
+\hline
+7 &
+Analisi, sviluppo e documentazione sul collegamento tra modulo scrum e
+  modulo forum (anticipato dalla settimana 8). Sviluppo di \gloss{api} per
+  JPAUtil (inizialmente non previste). Implementazione di un nuovo tipo di
+  notifica utilizzando un Telegram Bot. \\
+\hline
+8 &
+Sviluppo di un sistema di gestione del collegamento tra il proprio utente e il
+  proprio numero telefonico/account su Telegram. Sviluppo di un modulo di
+  istruzioni per la creazione di un proprio Telegram Bot. Prototipazione di
+  invio di documenti. Incremento in termini di sicurezza dell'accoppiamento tra
+  un utente e il Telegram Bot. Studio della realtà aziendale e inizio stesura
+  della relazione finale. \\
+\hline
+\end{tabular}
+\captionof{table}{Deviazioni rispetto al Piano di Lavoro}
+\label{tab:deviazioni}
+
+\paragraph{Strumenti di \emph{Inspection}} \mbox{} \\
+
+Un burn-down chart può non essere l'unico strumento di \emph{Inspection} utile
+per un gruppo di lavoro, poichè non riesce a mostrare informazioni riguardo a
+diversi indicatori di performance:
+
+\begin{itemize}
+\item Un \textbf{burn-up chart} mostra quante attività vengono aggiunte man
+  mano che lo sprint avanza, mettendo in evidenza eventuali lacune
+  nell'attività di pianificazione;
+\item Un \textbf{cumulative flow diagram} mostra i livelli in cui risiedono
+  maggiormente i task, trovando eventuali colli di bottiglia nei processi di
+  sviluppo aziendale e permettendo di ricavare utili informazioni come il
+  \gls{lead-time}.
+\end{itemize}
+
+\paragraph{Notifiche su Telegram} \mbox{} \\
+
+Le funzionalità di notifica previste dal Piano di Lavoro riguardavano l'invio
+di mail interne tramite un modulo di JPA dedicato a tale scopo.
+
+Tuttavia, tale parte dell'applicazione è ancora in via di sviluppo e presenta
+delle limitazioni come il fatto di non poter utilizzata al di fuori di JPA.
+
+Per questo motivo, durante lo stage è stato concordato lo sviluppo di un nuovo
+tipo di notifiche, trasmesse su Telegram.
+
+Telegram è un programma di messaggistica istantanea completamente
+gratuito\footnote{a differenza di altri software, anche le \gloss{api}
+disponibili sono gratuite} che ha nella velocità e nella sicurezza i suoi
+punti di forza. Questa applicazione è disponibile sia su dispositivi mobili
+che su computer ed è permesso l'invio di qualsiasi tipo di file.
+
+Dal 24 giugno di quest'anno Telegram ha reso disponibile i \textbf{Telegram
+Bot}, ovvero degli account che ricevono e inviano messaggi via software e non
+per comando diretto di persone.
+
+Grazie a questi Bot è quindi possibile automatizzare attività e, nel caso del
+mio stage, inviare messaggi contenenti notifiche relative ad eventi su JPA.
 
 %**************************************************************
 \section{Norme e strumenti}
