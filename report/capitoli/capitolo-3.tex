@@ -141,10 +141,213 @@ mio stage, inviare messaggi contenenti notifiche relative ad eventi su JPA.
 
 \subsection{Formazione delle conoscenze mancanti}
 
+Per formare le conoscenze mancanti ho proceduto sia con un apprendimento di
+tipo ``classico'', consultando video on-line, libri e articoli di blog, sia con
+un apprendimento di tipo pratico.
+
+Questo mi ha permesso di conoscere Scrum, come i metodi agili sono collegati
+al resto dei metodi di produzione industriali e di apprendere le
+\gls{best-practice} per le tecnologie che non conoscevo.
+
 \subsection{Comunicazione tra membri del team}
+
+Le interazioni tra membri del team avvenivano tramite diversi mezzi di
+comunicazione:
+
+\begin{itemize}
+\item Dialogo verbale, per chiarimenti veloci e di importanza minima e
+  analisi. Gli esiti di questa venivano riportati per iscritto;
+\item Telegram, per comunicazioni veloci di carattere generico;
+\item Skype, per condivisione di file leggeri e link;
+\item Forum di JPA, per la discussione di tematiche di sviluppo di interesse
+  comune all'intero team;
+\item Note su task in JPA, per aggiungere brevi notizie relative ad uno
+  specifico task;
+\item Mail interna a JPA, utilizzata solamente per le prime settimane di stage
+  per comunicare l'ultimo numero del messaggio di errore per il lato client di
+  JPA;
+\item Mail personale (esterna a JPA), per comunicazioni di carattere formale.
+\end{itemize}
 
 \subsection{Sviluppo}
 
+Le norme, le procedure e gli strumenti rispettati per lo sviluppo sono un
+sovrainsieme di quanto elencato in sezione \ref{sec:azienda-tecnologie}.
+
+In questa sezione verranno riportati i metodi e le regole che ho imposto a me
+stesso durante lo sviluppo, facendo particolare attenzione che questi non
+fossero conflittuali con quanto imposto dall'azienda.
+
+\paragraph{Analisi} \mbox{} \\
+
+L'attività di \textbf{analisi} serviva a delineare i requisiti e i possibili
+scenari di applicazione per una funzionalità da introdurre.
+
+Per quanto riguarda i requisiti, questi venivano divisi in:
+
+\begin{itemize}
+\item \textbf{Requisiti funzionali:} condizioni il cui soddisfacimento
+  comportano un adempimento di una caratteristica comportamentale del sistema
+  (e.g. aggiunta della funzionalità di modifica elemento);
+\item \textbf{Requisiti non funzionali:} condizioni il cui soddisfacimento
+  comporta un miglioramento della qualità d'uso del prodotto sviluppato (e.g.
+  realizzazione del Manuale Utente).
+\end{itemize}
+
+I requisiti individuati venivano a loro volta frammentati fino a diventare di
+granularità tale da poter monitorare con precisione il loro soddisfacimento,
+per entrambi i tipi di requisito.
+
+Per quanto riguarda i casi d'uso, questi venivano realizzati per poter
+dialogare con minor ambiguità con il tutor aziendale riguardo gli obiettivi da
+definire.
+
+I casi d'uso sono stati utilizzati solamente per gli obiettivi più complessi,
+esplicitando solamente le funzionalità più critiche di questi. Lo standard
+adottato per la stesura di questi è \gloss{uml} 2.0.
+
+\paragraph{Progettazione} \mbox{} \\
+
+A seguito dell'analisi, vi è l'attività di \textbf{progettazione}.
+
+JPA presenta un'architettura progettata per essere facilmente estensibile in
+caso di modifiche di lieve entità: nella maggior parte dei casi,
+l'implementazione di nuove funzionalità richiede la riproduzione di componenti
+architetturali già esistenti, sia nel lato client che in quello server.
+
+Per questo motivo, la progettazione per la maggior parte degli obiettivi è
+consistita semplicemente nel:
+
+\begin{itemize}
+\item Progettare una o più nuove tabelle in JPADb o alterarne una di quelle
+  già esistenti;
+\item Definire delle classi che rappresentassero gli oggetti descritti nelle
+  tabelle;
+\item Stilare una lista di operazioni che il \BKEND{} deve offrire al \FREND{};
+\item Nel caso in cui l'obiettivo preveda la realizzazione sul \FREND{} di un
+  modulo o di una \gloss{direttiva}, progettarne uno (o una) sulla base di
+  quelli già esistenti;
+\item Progettazione della vista HTML e di quali operazioni questa può offrire
+  all'utente.
+\end{itemize}
+
+Tuttavia, vi sono state delle eccezioni a questa procedura di progettazione.
+
+La prima consiste nello sviluppo delle funzionalità di notifica: l'architettura
+da progettare per questa parte doveva presentare un livello di complessità
+maggiore affinchè di potesse essere estesa più facilmente in futuro.
+
+Oltre a ciò, col passare delle settimane la mia conoscenza su AngularJS è
+cresciuta con studi personali. Dopo aver lavorato per cinque settimane, ho
+notato che il principio DRY\footnote{\emph{Don't Repeat Yourself}} non veniva
+rispettato: molte parti di logica applicativa del lato client venivano
+replicate in diversi moduli, sebbene fossero relative non a uno specifico
+modulo, ma ad una componente specifica del dominio applicativo.
+
+Per questo motivo, ho introdotto nell'architettura del \FREND{} degli
+\emph{Angular service}, ovvero oggetti che potessero incapsulare delle
+operazioni specifiche per un certo elemento del dominio applicativo (e.g.
+collegamento tra area forum e uno sprint).
+
+Con questo approccio, fin da subito ho avuto vantaggi significativi:
+
+\begin{itemize}
+\item \textbf{Diminuzione delle righe di codice:} molte parti di codice lunghe
+  e ripetute sono state spostate esternamente ai moduli, alleggerendo questi;
+\item \textbf{Costo delle modifiche:} anzichè dover cercare le sezioni di
+  codice in cui le stesse istruzioni venivano eseguite, è stato sufficiente
+  applicare una modifica al corpo dei \emph{service};
+\item \textbf{Aderenza al \gls{framework}:} L'architettura di AngularJS è
+  spesso definita come MVVM (\emph{Model-View-ViewModel}). Il controller e
+  l'oggetto \texttt{\$scope} dovrebbero fornire solamente uno strato
+  intermedio tra vista e modello (ViewModel). Nell'architettura del \FREND{}
+  pre-esistente, il controller stesso aveva al suo interno l'intera
+  \emph{business logic} e la parte di Model era completamente assente.
+\end{itemize}
+
+\paragraph{Codifica} \mbox{} \\
+
+Una volta conclusa la progettazione, comincia l'attività di codifica. Per
+questa attività sono state individuate regole aggiuntive rispetto a quelle già
+impiegate dal team.
+
+Per il \BKEND{} ho deciso di commentare con Javadoc ogni classe, campo dati o
+metodo qualora il nome di questi non facesse già capire cosa rappresenta tale
+entità.
+
+Tale accorgimento è stato veramente utile, poichè molte classi presentavano
+molti campi dati con nomi lunghi due o tre lettere (per motivi di efficienza)
+e l'\gloss{ide}, senza Javadoc, non fornisce un aiuto contestuale per la loro
+descrizione.
+
+Se ad essere commentata è un'operazione, devono essere usate anche le
+annotazioni \texttt{@param} e \texttt{@return} per spiegare quali parametri
+fornire e cosa restituisce tale metodo.
+
+Un altro accorgimento adottato per il \BKEND{} è far corrispondere ad ogni
+variante di una classe enumerativa una stringa che la rappresenti.
+
+Per il \FREND{} ho adottato le seguenti convenzioni:
+
+\begin{itemize}
+\item Per la dichiarazione di oggetti vuoti, inizializzarli dando come valore
+  \texttt{\{\}};
+\item Per la dichiarazione di vettori vuoti, inizializzarli dando come valore
+  \texttt{[]};
+\item Uso di JSDoc per i metodi più complessi;
+\item Il nome di ciascun modulo con cui si raggruppano diversi servizi per
+  poterli includere deve terminare con \texttt{Services}.
+\end{itemize}
+
+Oltre alle regole sopra elencate, per il \FREND{} ho deciso di versionare
+autonomamente quanto producevo. Il \gloss{vcs} che ho scelto è \textbf{Git},
+siccome avevo già esperienza con tale sistema.
+
+Questo mi ha permesso di:
+
+\begin{itemize}
+\item avere un ramo principale (\texttt{master}) in cui sono presenti tutti
+  gli incrementi per i vari obiettivi previsti dal Piano di Lavoro;
+\item avere dei rami secondari per funzionalità il cui inserimento non
+  garantiva stabilità (ad esempio quando ho inserito gli
+  \emph{Angular service} ho creato un ramo apposito);
+\item alla consegna del lavoro, ho potuto inviare al tutor aziendale una copia
+  del \gls{repository} in cui vi è una sequenza di salvataggi
+  sufficientemente o più granulare da poter separare la realizzazione di un
+  obiettivo da un altro. In questo modo, l'inclusione dei vari
+  incrementi è molto più semplice sia in termini di integrazione che di
+  verifica;
+\item avere una \emph{staging area}, in cui salvare temporaneamente e non
+  definitivamente le modifiche, per poterle confermare in un secondo momento
+  (al contrario di SVN, dove questa è assente).
+\end{itemize}
+
+\paragraph{Documentazione} \mbox{} \\
+
+Per la documentazione ho utilizzato il linguaggio \LaTeX{}, \TeX{}Studio come
+ambiente di scrittura e Inkscape per trattare le immagini da inserire.
+
+I documenti possono essere:
+
+\begin{itemize}
+\item Manuali Utente;
+\item Specifiche Tecniche;
+\item Documenti generici.
+\end{itemize}
+
+Per ogni documento, ogni revisione deve essere indicata e, nel caso in cui vi
+sia più di una revisione dello stesso documento, deve essere inserito un
+diario delle modifiche.
+
+Ciascun documento ha una sezione introduttiva, dove è indicato lo scopo del
+documento, lo scopo del prodotto, istruzioni per la lettura del documento (ad
+esempio vengono esplicitate eventuali convenzioni tipografiche o l'uso di
+standard come \gloss{uml}) ed eventuali note di carattere generico.
+
+In ciascun documento possiede un glossario, collocato nelle pagine finali e
+avente contenuto specifico per il dominio applicativo trattato.
+
+%**************************************************************
 \section{Resoconto dell'attività di stage}
 
 \subsection{Prima settimana -- formazione}
