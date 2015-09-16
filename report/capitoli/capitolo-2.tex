@@ -25,27 +25,27 @@ che rendessero più soddisfacente l'uso dell'area Scrum di JPA. Questo è stato
 possibile riconoscendo alcuni limiti che ad inizio stage JPA presentava:
 
 \begin{itemize}
-\item Per poter essere utilizzato da team che adottano la metodologia Scrum,
+\item per poter essere utilizzato da team che adottano la metodologia Scrum,
   vi era la necessità di studiare le differenze tra quanto previsto da Scrum e
   quanto offerto attualmente da questa area di JPA;
-\item La decomposizione dei task più complessi era frequentemente fonte di
+\item la decomposizione dei task più complessi era frequentemente fonte di
   problemi, siccome rendeva poco comprensibile il visualizzatore di sprint per
   le seguenti cause:
   \begin{itemize}
-  \item Il meccanismo già presente per dire che un task è padre di un altro non
+  \item il meccanismo già presente per dire che un task è padre di un altro non
     consentiva una visione chiara della relazione, che non veniva evidenziata
     nel visualizzatore di sprint;
-  \item Sia esplicitando la relazione padre-figlio tra diversi task che
+  \item sia esplicitando la relazione padre-figlio tra diversi task che
     evitando di farlo, per suddividere un task in più sotto-task dovevano
     essere create \textbf{molte} attività, che compromettevano la leggibilità
     del visualizzatore di sprint.
   \end{itemize}
-\item Nonostante uno dei principi fondamentali di Scrum sia l'\emph{Inspection}
+\item nonostante uno dei principi fondamentali di Scrum sia l'\emph{Inspection}
   dei propri processi, non vi era nessuno strumento a sostegno della verifica
   e il controllo dei propri processi;
-\item Ai clienti che fanno uso delle aree di modellazione processi di JPA
+\item ai clienti che fanno uso delle aree di modellazione processi di JPA
   potrebbe servire un collegamento tra queste e l'area Scrum;
-\item L'area Scrum di JPA prevedeva esclusivamente il \emph{pull model} come
+\item l'area Scrum di JPA prevedeva esclusivamente il \emph{pull model} come
   modalità per ottenere informazioni: questo problema incideva chiaramente
   sull'efficienza del team, dal momento che non era possibile ottenere
   informazioni se non per controllo manuale da parte degli utenti.
@@ -170,10 +170,10 @@ Oltre alla tematica principale dello stage, altri motivi che mi hanno portato
 a questa scelta sono:
 
 \begin{itemize}
-\item Conoscere parte del mondo dei software gestionali;
-\item Lavorare in un ambiente giovane, con molte persone al suo interno;
-\item Poter contribuire direttamente all'efficienza dei processi aziendali;
-\item Poter lavorare su una web application con tecnologie a me nuove.
+\item conoscere parte del mondo dei software gestionali;
+\item lavorare in un ambiente giovane, con molte persone al suo interno;
+\item poter contribuire direttamente all'efficienza dei processi aziendali;
+\item poter lavorare su una web application con tecnologie a me nuove.
 \end{itemize}
 
 %**************************************************************
@@ -308,21 +308,21 @@ acquisito familiarità con queste.
 Questa libreria presenta i seguenti punti di forza:
 
 \begin{itemize}
-\item Numerosità elevata dei tipi di grafico, offrendo la possibilità di
+\item numerosità elevata dei tipi di grafico, offrendo la possibilità di
   combinarli;
-\item Utilizzo di HTML5 e supporto per diversi browser;
-\item Possibilità di aggiornare il grafico senza ricaricare la pagina;
-\item Grafici mostrati in formato \gloss{svg} (vettoriale), garantendo un'alta qualità
-  dell'immagine anche su schermi ad alta risoluzione o con zoom;
-\item Oltre a visualizzare l'immagine del grafico, sono disponibili degli
+\item utilizzo di HTML5 e supporto per diversi browser;
+\item possibilità di aggiornare il grafico senza ricaricare la pagina;
+\item grafici mostrati in formato \gloss{svg} (vettoriale), garantendo un'alta
+  qualità dell'immagine anche su schermi ad alta risoluzione o con zoom;
+\item oltre a visualizzare l'immagine del grafico, sono disponibili degli
   utili comandi per ciascun tipo di grafico;
-\item Il loro uso è gratuito.
+\item il loro uso è gratuito.
 \end{itemize}
 
 Il loro uso però ha comportato le seguenti difficoltà:
 
 \begin{itemize}
-\item Complessità nell'integrarli in una web application scritta in AngularJS:
+\item complessità nell'integrarli in una web application scritta in AngularJS:
   per l'integrazione è stata usata la \gloss{direttiva}
   \texttt{angular-google-chart} v.0.0.11 che non copre completamente tutte le
   possibilità offerte dalle Google Chart \gloss{api}. Ad esempio, non tutti i
@@ -337,7 +337,7 @@ Il loro uso però ha comportato le seguenti difficoltà:
 \label{fig:logo-agc}%
 \end{figure}
 
-\item Struttura complessa per l'inserimento di dati: la ricca documentazione
+\item struttura complessa per l'inserimento di dati: la ricca documentazione
   delle Google Chart \gloss{api} non fornisce uno schema per le proprietà
   degli oggetti rappresentati un grafico. \\
   La difficoltà incontrata consiste infatti nel dover dedurre da vari esempi
@@ -352,19 +352,19 @@ Nelle pagine web di JPA è stato utilizzato il set di icone \textbf{Font
 Awesome Icons} v.4.1.0, che porta con sè diversi benefici:
 
 \begin{itemize}
-\item Si hanno a disposizione centinaia di icone con stile grafico uniforme;
-\item Le icone sono in formato \gloss{svg}, perciò la qualità della loro
+\item si hanno a disposizione centinaia di icone con stile grafico uniforme;
+\item le icone sono in formato \gloss{svg}, perciò la qualità della loro
   visualizzazione rimane alta anche su schermi ad alta risoluzione o
   effettuando uno zoom su queste;
-\item Non serve JavaScript per visualizzare le icone in questo set,
+\item non serve JavaScript per visualizzare le icone in questo set,
   alleggerendo il caricamento della pagina e la facilità di impiego;
-\item È stato sviluppato originariamente per integrarsi con Bootstrap,
+\item è stato sviluppato originariamente per integrarsi con Bootstrap,
   \gloss{framework} grafico utilizzato per il \FREND{} di JPA;
-\item Risulta facile modificare le icone presenti e fornire stili aggiuntivi
+\item risulta facile modificare le icone presenti e fornire stili aggiuntivi
   con regole CSS;
-\item Questo insieme di icone è ottimo anche dal punto di vista
+\item questo insieme di icone è ottimo anche dal punto di vista
   dell'accessibilità fornendo supporto agli screen reader;
-\item Il suo uso è gratuito.
+\item il suo uso è gratuito.
 \end{itemize}
 
 \begin{figure}[H]%
@@ -395,10 +395,10 @@ chiarimenti, siccome ho svolto lo stage nello stesso open space dove lavorava
 il team. Queste avvenivano principalmente per:
 
 \begin{itemize}
-\item Capire se la parte di incremento parzialmente sviluppata era corretta
+\item capire se la parte di incremento parzialmente sviluppata era corretta
   rispetto alle attese;
-\item Chiedere informazioni riguardo norme o raccomandazioni per lo sviluppo;
-\item Ricevere informazioni su variazioni o chiarimenti di requisiti.
+\item chiedere informazioni riguardo norme o raccomandazioni per lo sviluppo;
+\item ricevere informazioni su variazioni o chiarimenti di requisiti.
 \end{itemize}
 
 \paragraph{Pianificazione dello sprint} \mbox{}
@@ -410,10 +410,10 @@ completare un incremento.
 Una volta terminata l'analisi, era mio compito:
 
 \begin{enumerate}
-\item Creare uno sprint in JPA per la settimana lavorativa;
-\item Attivare tale sprint;
-\item Creare i task necessari per riuscire a sviluppare l'incremento;
-\item Inserire tali task nello sprint appena creato.
+\item creare uno sprint in JPA per la settimana lavorativa;
+\item attivare tale sprint;
+\item creare i task necessari per riuscire a sviluppare l'incremento;
+\item inserire tali task nello sprint appena creato.
 \end{enumerate}
 
 \paragraph{Consegna dell'incremento di uno sprint} \mbox{}
@@ -422,11 +422,11 @@ Al termine dello sprint, le parti dell'incremento venivano consegnate con
 diverse modalità a seconda della loro natura:
 
 \begin{itemize}
-\item Le modifiche agli script per JPADb venivano integrate appena testate;
-\item I documenti venivano consegnati in allegato alla mail di resoconto
+\item le modifiche agli script per JPADb venivano integrate appena testate;
+\item i documenti venivano consegnati in allegato alla mail di resoconto
   inviata al tutor interno;
-\item Le modifiche al \BKEND{} venivano integrate al ramo principale di SVN;
-\item Le modifiche al \FREND{} venivano consegnate personalmente al tutor
+\item le modifiche al \BKEND{} venivano integrate al ramo principale di SVN;
+\item le modifiche al \FREND{} venivano consegnate personalmente al tutor
   aziendale affinchè fossero verificate più attentamente, per essere integrate
   in un secondo momento.
 \end{itemize}
