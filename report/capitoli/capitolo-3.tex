@@ -52,7 +52,7 @@ Informatica, analizzando ulteriori necessità del team.
 \begin{tabular}[t]{| c | p{10cm} |}
 
 \hline
-\textbf{Settimana} & \textbf{Lavoro previsto} \\
+\textbf{Settimana} & \textbf{Lavoro effettuato} \\
 \hline
 1 &
 Sviluppo di un layout alternativo per un modulo (non previsto). \\
@@ -103,10 +103,10 @@ per un gruppo di lavoro, poichè non riesce a mostrare informazioni riguardo a
 diversi indicatori di performance:
 
 \begin{itemize}
-\item Un \textbf{burn-up chart} mostra quante attività vengono aggiunte man
+\item un \textbf{burn-up chart} mostra quante attività vengono aggiunte man
   mano che lo sprint avanza, mettendo in evidenza eventuali lacune
   nell'attività di pianificazione;
-\item Un \textbf{cumulative flow diagram} mostra i livelli in cui risiedono
+\item un \textbf{cumulative flow diagram} mostra i livelli in cui risiedono
   maggiormente i task, trovando eventuali colli di bottiglia nei processi di
   sviluppo aziendale e permettendo di ricavare utili informazioni come il
   \gloss{lead-time}.
@@ -156,18 +156,18 @@ Le interazioni tra membri del team avvengono tramite diversi mezzi di
 comunicazione:
 
 \begin{itemize}
-\item Dialogo verbale, per analisi o chiarimenti veloci e di importanza minima.
+\item dialogo verbale, per analisi o chiarimenti veloci e di importanza minima.
   Gli esiti di questa venivano riportati per iscritto;
 \item Telegram, per comunicazioni veloci di carattere generico;
 \item Skype, per condivisione di file leggeri e link;
-\item Forum di JPA, per la discussione di tematiche di sviluppo di interesse
+\item forum di JPA, per la discussione di tematiche di sviluppo di interesse
   comune all'intero team;
-\item Note su task in JPA, per aggiungere brevi notizie relative ad uno
+\item note su task in JPA, per aggiungere brevi notizie relative ad uno
   specifico task;
-\item Mail interna a JPA, utilizzata solamente per le prime settimane di stage
+\item mail interna a JPA, utilizzata solamente per le prime settimane di stage
   per comunicare l'ultimo numero del messaggio di errore per il lato client di
   JPA;
-\item Mail personale (esterna a JPA), per comunicazioni di carattere formale.
+\item mail personale (esterna a JPA), per comunicazioni di carattere formale.
 \end{itemize}
 
 \subsection{Sviluppo}
@@ -318,12 +318,12 @@ variante di una classe enumerativa una stringa che la rappresenti.
 Per il \FREND{} ho adottato le seguenti convenzioni:
 
 \begin{itemize}
-\item Per la dichiarazione di oggetti vuoti, inizializzarli dando come valore
+\item per la dichiarazione di oggetti vuoti, inizializzarli dando come valore
   \texttt{\{\}};
-\item Per la dichiarazione di vettori vuoti, inizializzarli dando come valore
+\item per la dichiarazione di vettori vuoti, inizializzarli dando come valore
   \texttt{[]};
-\item Uso di JSDoc per i metodi più complessi;
-\item Il nome di ciascuna collezione in cui si raggruppano diversi servizi
+\item uso di JSDoc per i metodi più complessi;
+\item il nome di ciascuna collezione in cui si raggruppano diversi servizi
   deve terminare con \texttt{Services}.
 \end{itemize}
 
@@ -361,7 +361,7 @@ I documenti possono essere:
 \begin{itemize}
 \item Manuali Utente;
 \item Specifiche Tecniche;
-\item Documenti di carattere generico.
+\item documenti di carattere generico.
 \end{itemize}
 
 Per ogni documento, ogni revisione deve essere indicata e, nel caso in cui vi
@@ -425,9 +425,9 @@ per includerle all'interno di altri moduli.
 Il modulo relativo alle checklist doveva offrire le seguenti funzionalità:
 
 \begin{enumerate}
-\item Creare un template di checklist;
-\item Creare una checklist;
-\item Importare un template in una checklist.
+\item creare un template di checklist;
+\item creare una checklist;
+\item importare un template in una checklist.
 \end{enumerate}
 
 La \gloss{direttiva} doveva fornire una componente da includere in altri
@@ -443,15 +443,15 @@ Tuttavia, ho deciso di riportati i requisiti funzionali che non appaiono
 evidenti da quanto finora esposto:
 
 \begin{enumerate}
-\item Le righe di template di checklist possono essere obbligatorie o
+\item le righe di template di checklist possono essere obbligatorie o
   opzionali;
-\item Le righe di template di checklist possono essere modificabili o
+\item le righe di template di checklist possono essere modificabili o
   importabili in sola lettura;
-\item Il modulo di gestione checklist deve visualizzare diverse liste di
+\item il modulo di gestione checklist deve visualizzare diverse liste di
   checklist a seconda del filtro applicato: le possibili scelte sono
   ``Nuove'', ``Mie'', ``Attive'' e ``Completate'';
-\item Dev'essere possibile cambiare la posizione di righe di checklist;
-\item Le checklist e i template di checklist non possono mai essere eliminati
+\item dev'essere possibile cambiare la posizione di righe di checklist;
+\item le checklist e i template di checklist non possono mai essere eliminati
   fisicamente ma al più disattivati.
 \end{enumerate}
 
@@ -467,22 +467,22 @@ percentuale abbia raggiunto lo 0\%.
 I grafici sono così composti (si veda figura \ref{fig:bdchart}):
 
 \begin{enumerate}
-\item Sull'asse delle ascisse sono riportati i giorni che vanno dall'inizio
+\item sull'asse delle ascisse sono riportati i giorni che vanno dall'inizio
   dello sprint fino alla sua fine;
-\item Sull'asse delle ordinate è presente la percentuale di lavoro rimanente;
-\item Sulla legenda sono indicati i dati visualizzati nel diagramma, con i
+\item sull'asse delle ordinate è presente la percentuale di lavoro rimanente;
+\item sulla legenda sono indicati i dati visualizzati nel diagramma, con i
   relativi colori con cui sono stati disegnati;
-\item La retta ideale parte da 100 (il primo giorno) e arriva ad esaurirsi
+\item la retta ideale parte da 100 (il primo giorno) e arriva ad esaurirsi
   completamente a fine sprint;
-\item La curva reale viene calcolata interpolando le unità di lavoro
+\item la curva reale viene calcolata interpolando le unità di lavoro
   disponibili per tutti i giorni non posteriori alla data corrente;
-\item Le colonne sono composte sovrapponendo i vari carichi di lavoro
+\item le colonne sono composte sovrapponendo i vari carichi di lavoro
   residuo\footnote{Il valore residuo per ogni task dipende dal livello di
   avanzamento in cui esso si trova} per ogni tipo di task.
   \begin{itemize}
-  \item Nella visualizzazione per tipi, ogni colonna e relativo tooltip sono
+  \item nella visualizzazione per tipi, ogni colonna e relativo tooltip sono
     colorati con la tonalità associata ad un certo tipo;
-  \item Nella visualizzazione per livelli, ogni tooltip ha al suo interno ha
+  \item nella visualizzazione per livelli, ogni tooltip ha al suo interno ha
     l'icona associata al livello corrispondente.
   \end{itemize}
 \end{enumerate}
@@ -510,16 +510,16 @@ riportati i requisiti funzionali che non appaiono evidenti da quanto finora
 esposto:
 
 \begin{enumerate}
-\item Il grafico viene tracciato considerando soltanto i giorni feriali della
+\item il grafico viene tracciato considerando soltanto i giorni feriali della
   settimana (da lunedì a venerdì);
-\item I tooltip nella visualizzazione per livelli devono essere colorati con
+\item i tooltip nella visualizzazione per livelli devono essere colorati con
   tonalità di grigio che sono più chiare più il livello è avanzato;
-\item Ogni livello corrisponde ad una percentuale di completamento,
+\item ogni livello corrisponde ad una percentuale di completamento,
   configurabile in un modulo dell'area Scrum;
 \item JPA deve offrire la possibilità di stampare il grafico;
 \item JPA deve offrire la possibilità di visualizzare i dati del grafico in
   forma tabulare;
-\item Il carico residuo dei task deve essere proporzionale al numero di spunte
+\item il carico residuo dei task deve essere proporzionale al numero di spunte
   nella checklist legata al task, se questo:
   \begin{itemize}
   \item si trova in un livello proporzionale a checklist;
@@ -533,8 +533,8 @@ Come detto in sezione \ref{sec:prog-pianif}, ho realizzato anche ulteriori
 strumenti di \emph{Inspection} per i processi gestiti nell'area Scrum:
 
 \begin{itemize}
-\item Una variante del burn-down chart, con aree al posto delle colonne;
-\item Un burn-up chart (fig. \ref{fig:burnup}), che tiene conto dell'aggiunta
+\item una variante del burn-down chart, con aree al posto delle colonne;
+\item un burn-up chart (fig. \ref{fig:burnup}), che tiene conto dell'aggiunta
   di attività a sprint in corso;
 
   \begin{figure}[H]%
@@ -544,7 +544,7 @@ strumenti di \emph{Inspection} per i processi gestiti nell'area Scrum:
   \label{fig:burnup}%
   \end{figure}
 
-\item Un cumulative flow diagram (\ref{fig:cumulative}), che mostra al termine
+\item un cumulative flow diagram (\ref{fig:cumulative}), che mostra al termine
   di ciascun giorno quanti task sono in un certo livello;
 
   \begin{figure}[H]%
@@ -554,7 +554,7 @@ strumenti di \emph{Inspection} per i processi gestiti nell'area Scrum:
   \label{fig:cumulative}%
   \end{figure}
 
-\item Dei pie chart (grafici a torta), per vedere in totale quanti task
+\item dei pie chart (grafici a torta), per vedere in totale quanti task
   di un certo tipo sono presenti in uno sprint e quanti task sono in ciascun
   livello alla data odierna.
 \end{itemize}
@@ -586,11 +586,11 @@ essere utile avviare da uno specifico sprint un processo, come una RDA
 Nella descrizione precedente non vengono esplicitati i seguenti requisiti:
 
 \begin{itemize}
-\item Deve essere possibile visualizzare una lista di processi avviabili per
+\item deve essere possibile visualizzare una lista di processi avviabili per
   gli sprint;
-\item Deve essere possibile visualizzare una lista di processi avviabili per
+\item deve essere possibile visualizzare una lista di processi avviabili per
   i task Scrum (non per forza uguale alla lista per gli sprint);
-\item Le liste in cui sono presenti i processi devono essere divise per
+\item le liste in cui sono presenti i processi devono essere divise per
   argomento.
 \end{itemize}
 
@@ -606,13 +606,13 @@ in modo che attività automatiche di processi possano compiere le seguenti
 azioni:
 
 \begin{itemize}
-\item Creazione di sprint (attivo o inizialmente sospeso);
-\item Sospensione di uno sprint;
-\item Conclusione di uno sprint;
-\item Creazione di un task;
-\item Cambio di livello di un task;
-\item Inserimento di un task in uno sprint;
-\item Creazione di log nell'area Scrum.
+\item creazione di sprint (attivo o inizialmente sospeso);
+\item sospensione di uno sprint;
+\item conclusione di uno sprint;
+\item creazione di un task;
+\item cambio di livello di un task;
+\item inserimento di un task in uno sprint;
+\item creazione di log nell'area Scrum.
 \end{itemize}
 
 \paragraph{Funzionalità di notifica} \mbox{} \\
@@ -664,9 +664,9 @@ Al momento, gli \emph{stakeholders} sono interessati solamente ai seguenti
 eventi riguardanti sprint e task:
 
 \begin{itemize}
-\item Cambio di livello di un task (sia avanzamento che regressione);
-\item Chiusura di uno sprint;
-\item Aggiunta di un task ad uno sprint.
+\item cambio di livello di un task (sia avanzamento che regressione);
+\item chiusura di uno sprint;
+\item aggiunta di un task ad uno sprint.
 \end{itemize}
 
 Dal momento che la chiusura di uno sprint può coinvolgere più task in esso
@@ -686,10 +686,10 @@ Un'altra funzionalità voluta dal team era la possibilità di collegare l'area
 Forum a quella Scrum. Questo è dovuto al fatto che:
 
 \begin{itemize}
-\item Non è possibile inserire note riguardo ad uno sprint;
-\item Lo spazio delle note nei task spesso non è sufficiente per una
+\item non è possibile inserire note riguardo ad uno sprint;
+\item lo spazio delle note nei task spesso non è sufficiente per una
   discussione approfondita riguardo a tale argomento;
-\item Il visualizzatore di sprint (dove sono visibili le note riguardo a
+\item il visualizzatore di sprint (dove sono visibili le note riguardo a
   specifici task) non è accessibile ai clienti.
 \end{itemize}
 
@@ -720,9 +720,9 @@ Per richiedere la ricezione di notifiche via Telegram, ho progettato il
 seguente flusso di operazioni (fig. \ref{fig:telegram-request}):
 
 \begin{enumerate}
-\item Su Telegram, inviare un messaggio a @SmiJPABot contenente il proprio
+\item su Telegram, inviare un messaggio a @SmiJPABot contenente il proprio
   contatto per richiedere l'associazione;
-\item In JPA, per ogni evento per il quale si desidera ricevere notifiche
+\item in JPA, per ogni evento per il quale si desidera ricevere notifiche
   selezionare l'opzione ``Telegram''.
 \end{enumerate}
 
@@ -751,11 +751,11 @@ L'ultimo sviluppo nell'attività di stage ha portato a implementare ulteriori
 funzionalità riguardanti i Telegram Bot:
 
 \begin{itemize}
-\item Realizzazione di un modulo in cui viene spiegato come creare un Telegram
+\item realizzazione di un modulo in cui viene spiegato come creare un Telegram
   Bot ed in seguito collegarlo a JPA;
-\item Gestione dei contatti telefonici di un utente e di un'eventuale
+\item gestione dei contatti telefonici di un utente e di un'eventuale
   associazione del proprio numero ad un account Telegram;
-\item Prototipazione di invio e ricezione documenti tramite Bot.
+\item prototipazione di invio e ricezione documenti tramite Bot.
 \end{itemize}
 
 \begin{tabular}{| c | p{10cm} |}
@@ -866,7 +866,7 @@ Per lo sviluppo del burn-down chart erano richieste principalmente tre
 modifiche architetturali al \FREND:
 
 \begin{enumerate}
-\item La modifica della classe rappresentante l'entità ``livello'', in modo 
+\item la modifica della classe rappresentante l'entità ``livello'', in modo 
   tale da prevedere che a questo potessero essere associate:
   \begin{itemize}
   \item una percentuale di completamento per il task una volta che questo
@@ -874,9 +874,9 @@ modifiche architetturali al \FREND:
   \item il fatto di poter essere proporzionale ad una checklist\footnote{Solo
     un livello tra tutti può essere proporzionale}.
   \end{itemize}
-\item L'inclusione della direttiva \texttt{angular-google-chart} per poter
+\item l'inclusione della direttiva \texttt{angular-google-chart} per poter
   usare le \textbf{Google Chart \gloss{api}} in JPA;
-\item L'introduzione di una \gloss{direttiva} riusabile nei vari moduli in cui
+\item l'introduzione di una \gloss{direttiva} riusabile nei vari moduli in cui
   si vuole dare la possibilità di selezionare uno sprint e visualizzare un
   burn-down chart per questo.
 \end{enumerate}
@@ -926,10 +926,10 @@ l'architettura relativa a questa parte di JPA in modo tale che questa sia
 facilmente estensibile:
 
 \begin{itemize}
-\item A differenza delle checklist e del burn-down chart, le notifiche possono
+\item a differenza delle checklist e del burn-down chart, le notifiche possono
   avere ulteriori sviluppi molto più frequentemente, come l'aggiunta di un
   evento da seguire o il supporto a un nuovo mezzo di comunicazione;
-\item L'algoritmo che interpreta il codice pensato per la scrittura di corpo e
+\item l'algoritmo che interpreta il codice pensato per la scrittura di corpo e
   titolo di notifiche potrebbe essere reso più efficiente o modificato per
   cambio di codifica di tali testi.
 \end{itemize}
@@ -1000,11 +1000,11 @@ in una specifica tecnica consegnata a Sanmarco Informatica, in cui vengono
 indicati anche:
 
 \begin{itemize}
-\item Come aggiungere eventi o tipi di notifiche;
-\item Eventuali migliorie di efficienza (e.g. cambiare i
+\item come aggiungere eventi o tipi di notifiche;
+\item eventuali migliorie di efficienza (e.g. cambiare i
   \texttt{NotificationBuilder} in classi \texttt{Runnable}, ovvero eseguibili
   concorrentemente);
-\item Avvertimenti, nel caso debba essere fornita obbligatoriamente
+\item avvertimenti, nel caso debba essere fornita obbligatoriamente
   un'implementazione non vuota ad alcuni metodi astratti di superclassi.
 \end{itemize}
 
@@ -1048,9 +1048,9 @@ con le \gloss{api} ed un account legato a persona reale, ho preferito la
 soluzione che prevedeva l'uso di un Bot:
 
 \begin{itemize}
-\item I Bot sono strumenti sviluppati e pensati appositamente per lo
+\item i Bot sono strumenti sviluppati e pensati appositamente per lo
   svolgimento di compiti automatici;
-\item Sebbene i Bot siano stati introdotti molto recentemente, la
+\item sebbene i Bot siano stati introdotti molto recentemente, la
   documentazione fornita da Telegram è ottima e dopo un breve periodo di
   prototipazione si può notare che il funzionamento di questi rispetta
   fedelmente le attese.
@@ -1125,19 +1125,19 @@ A questo punto, ho aggiunto le operazioni di scambio documenti alle classi
 %******************************************************************************
 %******************************************************************************
 
-\subsection{Codifica}
+\subsection{Codifica}\label{sec:prog-codifica}
 
 In questa sezione vengono esposti i punti salienti incontrati durante
 l'attività di codifica. Prima di mostrarli, viene brevemente esposta la
 procedura con la quale avveniva questa attività:
 
 \begin{itemize}
-\item Le tabelle di JPADb vengono modificate e i relativi script vengono
+\item le tabelle di JPADb vengono modificate e i relativi script vengono
   immediatamente integrati al ramo principale di SVN;
-\item Le modifiche al \BKEND{} vengono codificate con il seguente ordine per le
+\item le modifiche al \BKEND{} vengono codificate con il seguente ordine per le
   operazioni \gloss{crud}: \emph{Read}, \emph{Create}, \emph{Update},
   \emph{Delete};
-\item Il \FREND{} veniva invece sviluppato una volta che la parte di \BKEND{}
+\item il \FREND{} veniva invece sviluppato una volta che la parte di \BKEND{}
   veniva ritenuta stabile.
 \end{itemize}
 
@@ -1161,19 +1161,19 @@ A differenza dello sviluppo delle checklist, l'implementazione della
 Questo è dovuto a diversi fattori:
 
 \begin{itemize}
-\item Come detto in precedenza, l'inclusione della \gloss{direttiva}
+\item come detto in precedenza, l'inclusione della \gloss{direttiva}
   \texttt{angular-google-chart} ha ristretto alcune funzionalità offerte dalle
   \textbf{Google Chart \gloss{api}};
-\item Il burn-down chart doveva ignorare i sabati e le domeniche, sia nella
+\item il burn-down chart doveva ignorare i sabati e le domeniche, sia nella
   parte di \BKEND{} che in quella di \FREND{};
-\item I dati dovevano essere ricavati da dei log, quindi prima di riuscire ad
+\item i dati dovevano essere ricavati da dei log, quindi prima di riuscire ad
   effettuare tutte le computazioni necessarie era necessario preparare i dati
   in ingresso;
-\item L'insieme di livelli possibili per JPA non è noto a priori;
-\item L'implementazione del requisito desiderabile da me proposto, ovvero il
+\item l'insieme di livelli possibili per JPA non è noto a priori;
+\item l'implementazione del requisito desiderabile da me proposto, ovvero il
   gradiente di colorazione per i livelli, si è rivelato più difficile di
   quanto stimato inizialmente;
-\item Vi era la necessità di trattare con attenzione l'eventuale livello il
+\item vi era la necessità di trattare con attenzione l'eventuale livello il
   cui avanzamento può essere ritenuto proporzionale al completamento di una
   checklist.
 \end{itemize}
@@ -1197,17 +1197,17 @@ insieme di caratteristiche spiegate, nel documento da me realizzato per ogni
 strumento di \emph{Inspection} sono indicati:
 
 \begin{itemize}
-\item Il suo nome;
-\item Eventuali sinonimi o termini con cui lo strumento è conosciuto;
-\item Il suo scopo, ovvero una breve risposta alla domanda ``\emph{A cosa
+\item il suo nome;
+\item eventuali sinonimi o termini con cui lo strumento è conosciuto;
+\item il suo scopo, ovvero una breve risposta alla domanda ``\emph{A cosa
   serve questo strumento?}'';
-\item La sua rappresentazione grafica;
-\item Una motivazione che spiega più approfonditamente perchè lo strumento è
+\item la sua rappresentazione grafica;
+\item una motivazione che spiega più approfonditamente perchè lo strumento è
   adatto per lo scopo sopra dichiarato;
-\item Uno scenario in cui tale strumento è utilizzabile;
-\item Le misurazioni (in termini di indici \gloss{kpi}) che si possono
+\item uno scenario in cui tale strumento è utilizzabile;
+\item le misurazioni (in termini di indici \gloss{kpi}) che si possono
   ottenere tramite l'uso dello strumento;
-\item Eventuali varianti disponibili su JPA.
+\item eventuali varianti disponibili su JPA.
 \end{itemize}
 
 \paragraph{Avvio istanza di processo} \mbox{} \\
@@ -1233,13 +1233,13 @@ legati agli eventi per i quali è stata richiesta la ricezione di notifiche.
 Questa non era l'unica difficoltà legata a questo sviluppo:
 
 \begin{itemize}
-\item Dal momento che l'architettura era complessa, ho utilizzato dei
+\item dal momento che l'architettura era complessa, ho utilizzato dei
   \gloss{design-pattern}. La loro implementazione è risultata più facile
   ispirandomi a degli
   esempi\footnote{\url{https://github.com/snate/design_pattern}} che
   avevo realizzato durante il terzo anno di università ed adattandoli alle
   esigenze specifiche del problema incontrato;
-\item Oltre alla scrittura del testo della notifica, vi era una complessità
+\item oltre alla scrittura del testo della notifica, vi era una complessità
   algoritmica non banale anche nel recupero dei contatti da notificare e del
   modo in cui notificare ciascuno di essi.
 \end{itemize}
@@ -1251,11 +1251,11 @@ da rendere la funzionalità scalabile.
 Al contempo, il problema presentava le seguenti facilitazioni:
 
 \begin{itemize}
-\item L'algoritmo di decodifica non ha l'obbligo di interpretare cicli
+\item l'algoritmo di decodifica non ha l'obbligo di interpretare cicli
   innestati;
-\item L'algoritmo di decodifica non garantisce un output corretto a seguito di
+\item l'algoritmo di decodifica non garantisce un output corretto a seguito di
   un input testuale malformato;
-\item L'algoritmo che invia una mail interna in JPA è stato ricopiato da una
+\item l'algoritmo che invia una mail interna in JPA è stato ricopiato da una
   funzione già esistente.
 \end{itemize}
 
@@ -1351,20 +1351,20 @@ dinamiche con i \gloss{framework} Jasmine e/o Protractor.
 Tuttavia, quest'idea non è stata concretizzata per i seguenti motivi:
 
 \begin{itemize}
-\item Durante lo stage partivo inesperto nell'uso delle tecnologie per il
+\item durante lo stage partivo inesperto nell'uso delle tecnologie per il
   \FREND{} e stavo già investendo buona parte del tempo a mia disposizione per
   apprendere queste. Aggiungendo lo studio dei \gloss{framework} di test, avrei
   rischiato di non imparare ad usare bene nè l'uno nè l'altro insieme di
   tecnologie;
-\item L'impiego di tempo lavorativo per la configurazione dell'ambiente di
+\item l'impiego di tempo lavorativo per la configurazione dell'ambiente di
   test avrebbe potuto mettere a rischio il raggiungimento degli obiettivi
   prestabiliti;
-\item L'azienda ripone maggior interesse nello sviluppare un numero elevato di
+\item l'azienda ripone maggior interesse nello sviluppare un numero elevato di
   funzionalità che nell'automazione dell'attività di verifica. Per questo
   motivo, l'anticipo rispetto al Piano di Lavoro è stato utilizzato per il
   raggiungimento di nuovi obiettivi che andassero ad arricchire le possibilità
   che JPA offriva;
-\item Per la maggior parte dei casi, la verifica automatica non avrebbe
+\item per la maggior parte dei casi, la verifica automatica non avrebbe
   garantito un guadagno significativo in termini di efficienza.
 \end{itemize}
 
@@ -1373,7 +1373,7 @@ eseguito prove manuali per verificare la correttezza di \BKEND{} e \FREND{}
 con la seguente procedura:
 
 \begin{enumerate}
-\item Dopo aver (eventualmente) realizzato lo scheletro di un modulo o di una
+\item dopo aver (eventualmente) realizzato lo scheletro di un modulo o di una
   \gloss{direttiva} (nella parte di \FREND{}), aggiungere le nuove chiamate
   \gloss{rest} che vengono effettuate verso i \emph{Web services} del \BKEND{}.
   A questo punto:
@@ -1384,21 +1384,21 @@ con la seguente procedura:
   \item assegnare un codice univoco alla rilevazione di errori nella chiamata
     di tali metodi.
   \end{enumerate}
-\item Verificare che ciascuna delle chiamate \gloss{rest} fornisca i risultati
+\item verificare che ciascuna delle chiamate \gloss{rest} fornisca i risultati
   attesi\footnote{controllando sia lo stato di JPADb che le stampe sul lato
   client}, man mano che queste vengono implementate nel \BKEND{};
-\item Una volta che è stato verificato che le chiamate \gloss{rest} vadano a
+\item una volta che è stato verificato che le chiamate \gloss{rest} vadano a
   buon fine, verificare se il comportamento del \FREND{} è corretto andando a
   verificare il soddisfacimento di tutti i requisiti;
-\item Nel caso in cui uno dei requisiti non sia soddisfatto, modificare il
+\item nel caso in cui uno dei requisiti non sia soddisfatto, modificare il
   \FREND{} e tornare al punto 2, per verificare che le modifiche al \FREND{}
   continuino a passare in modo corretto i parametri ricevuti dal \BKEND{}.
 \item L'incremento viene infine presentato al tutor aziendale ed eventuali
   modifiche richieste vengono discusse ed eventualmente applicate e testate;
-\item Una volta verificati tutti i requisiti e ricevuta l'approvazione dal
+\item una volta verificati tutti i requisiti e ricevuta l'approvazione dal
   tutor aziendale, veniva svolto un ulteriore collaudo con il quale venivano
   ricavate le immagini per il Manuale Utente;
-\item Per il Manuale Utente, nei primi periodi di stage è stata svolta
+\item per il Manuale Utente, nei primi periodi di stage è stata svolta
   un'attività di \gloss{walkthrough}, mirata a consolidare uno scheletro da
   riusare per tutti i futuri documenti. In seguito, le verifiche sui documenti
   sono state effettuate esclusivamente sui punti di controllo presenti in
